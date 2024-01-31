@@ -35,18 +35,37 @@ module.exports = {
       colors: {
         current: "currentColor",
         transparent: "transparent",
-        white: "#FFFFFF",
-        black: "#121723",
-        dark: "#1D2430",
-        primary: "#4A6CF7",
+        white: "#fffaeb",
+        black: "#1f025b ",
+        dark: "#27005D",
+
+        // Primary colors (orange shades)
+        primary: "#ff5733", // Vibrant orange for light theme
+        "primary-dark": "#FF6A00", // Darker orange for dark theme
+        "primary-light": "#FFA85C", // Lighter orange for light theme
+
+        // Secondary colors
         yellow: "#FBB040",
         "body-color": "#788293",
         "body-color-dark": "#959CB1",
-        "gray-dark": "#1E232E",
-        "gray-light": "#F0F2F9",
+        "gray-dark": "#280274",
+        "gray-light": "#fffae3",
         stroke: "#E3E8EF",
         "stroke-dark": "#353943",
-        "bg-color-dark": "#171C28",
+        "bg-color-dark": "#280274 ",
+
+        // Additional shades of orange (if needed)
+        orange: {
+          100: "#FFEEDD",
+          200: "#FFD7BB",
+          300: "#FFBF99",
+          400: "#FFA877",
+          500: "#FF8C00", // Base orange color
+          600: "#CC7000",
+          700: "#994F00",
+          800: "#663300",
+          900: "#331900",
+        },
       },
 
       boxShadow: {
