@@ -5,7 +5,7 @@ import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
 
 const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
+  const [isProjectBased, setisProjectBased] = useState(true);
 
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
@@ -23,24 +23,24 @@ const Pricing = () => {
             data-wow-delay=".1s"
           >
             <span
-              onClick={() => setIsMonthly(true)}
+              onClick={() => setisProjectBased(true)}
               className={`${
-                isMonthly
+                isProjectBased
                   ? "pointer-events-none text-primary"
                   : "text-dark dark:text-white"
               } mr-4 cursor-pointer text-base font-semibold`}
             >
-              Monthly
+              Project-Based Model
             </span>
             <div
-              onClick={() => setIsMonthly(!isMonthly)}
+              onClick={() => setisProjectBased(!isProjectBased)}
               className="flex cursor-pointer items-center"
             >
               <div className="relative">
                 <div className="h-5 w-14 rounded-full bg-[#1D2144] shadow-inner"></div>
                 <div
                   className={`${
-                    isMonthly ? "" : "translate-x-full"
+                    isProjectBased ? "" : "translate-x-full"
                   } shadow-switch-1 absolute left-0 top-[-4px] flex h-7 w-7 items-center justify-center rounded-full bg-primary transition`}
                 >
                   <span className="active h-4 w-4 rounded-full bg-white"></span>
@@ -48,57 +48,85 @@ const Pricing = () => {
               </div>
             </div>
             <span
-              onClick={() => setIsMonthly(false)}
+              onClick={() => setisProjectBased(false)}
               className={`${
-                isMonthly
+                isProjectBased
                   ? "text-dark dark:text-white"
                   : "pointer-events-none text-primary"
               } ml-4 cursor-pointer text-base font-semibold`}
             >
-              Yearly
+              Subscription Model
             </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+        <div className="flex flex-col md:flex-row justify-center align-items gap-10 mx-auto">
+          {/* Free subscription model */}
+          {isProjectBased && <PricingBox
+            packageName="Free"
+            price={"-"}
+            duration={"1 Project"}
+            subtitle="Get your custom website design for free"
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
-          </PricingBox>
+            <OfferList text="Free Website Consultation" status="active" />
+            <OfferList text="Web designing journey walkthrough" status="active" />
+            <OfferList text="Custom web design complete with persona" status="active"/>
+          </PricingBox>}
+
+          {/* Basic subscription model */}
           <PricingBox
             packageName="Basic"
-            price={isMonthly ? "399" : "789"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            price={isProjectBased ? "7999" : "1999"}
+            duration={isProjectBased ? "project" : "mo"}
+            subtitle={isProjectBased? "Single landing page" : "Basic Plan"}
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            {isProjectBased ? (
+              <>
+                <OfferList text="One landing page" status="active" />
+                <OfferList text="Custom background colour option" status="active" />
+                <OfferList text="Tailored graphics" status="active" />
+                <OfferList text="Query form" status="active" />
+                <OfferList text="Multiple font variance" status="active" />
+                <OfferList text="Animations & Transition" status="active" />
+              </>
+            ):(
+              <>
+                <OfferList text="Basic hosting" status="active" />
+                <OfferList text="Light Content Updation" status="active" />
+                <OfferList text="Deployment Error Support" status="active" />
+                <OfferList text="Response time with 18-24 hr" status="active" />
+              </>
+              )
+            }
           </PricingBox>
+
+          {/* Plus subscription model */}
           <PricingBox
             packageName="Plus"
-            price={isMonthly ? "589" : "999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            price={isProjectBased ? "12999" : "5999"}
+            duration={isProjectBased ? "project" : "mo"}
+            subtitle={isProjectBased? "Full Website" : "Plus Plan"}
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
+            {isProjectBased ? (
+              <>
+                <OfferList text="Upto 4 website pages" status="active" />
+                <OfferList text="Custom background colour option" status="active" />
+                <OfferList text="Tailored graphics" status="active" />
+                <OfferList text="Query form" status="active" />
+                <OfferList text="Multiple font variance" status="active" />
+                <OfferList text="Animations & Transitions" status="active" />
+                <OfferList text="Custom Website persona - if any" status="active" />
+              </>
+            ) : (
+              <>
+                <OfferList text="Premium server hosting (Faster Load Time)" status="active" />
+                <OfferList text="Moderate content updation" status="active" />
+                <OfferList text="Deployment error support" status="active" />
+                <OfferList text="Response time with 18-24 hr" status="active" />
+                <OfferList text="Single website page persona restoration" status="active" />
+              </>
+              )
+            }
           </PricingBox>
         </div>
       </div>
