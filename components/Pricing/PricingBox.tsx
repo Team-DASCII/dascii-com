@@ -14,11 +14,11 @@ const PricingBox = (props: {
         data-wow-delay=".1s"
       >
         <div className="flex items-center justify-between">
-          <h3 className="price mb-2 text-lg font-bold text-black dark:text-white">
+          {packageName!=="Free" && <h3 className="price mb-2 text-lg font-bold text-black dark:text-white">
             Rs <span className="amount text-3xl">{price}</span>
             <span className="time text-body-color text-lg">/{duration}</span>
-          </h3>
-          <h4 className="mb-2 text-lg font-bold text-dark dark:text-white">
+          </h3>}
+          <h4 className={packageName!=="Free" ? `mb-2 text-lg font-bold text-dark dark:text-white` : `mb-2 text-4xl font-bold text-dark dark:text-white`}>
             {packageName}
           </h4>
         </div>

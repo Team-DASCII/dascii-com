@@ -12,7 +12,7 @@ const Pricing = () => {
       <div className="container">
         <SectionTitle
           title="Simple and Affordable Pricing"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="Explore our transparent pricing options, crafted to fit your unique goals and budget."
           center
           width="665px"
         />
@@ -64,7 +64,7 @@ const Pricing = () => {
           {/* Free subscription model */}
           {isProjectBased && <PricingBox
             packageName="Free"
-            price={"-"}
+            price={""}
             duration={"1 Project"}
             subtitle="Get your custom website design for free"
           >
