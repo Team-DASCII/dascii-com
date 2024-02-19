@@ -12,7 +12,7 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "DASCII landing page",
+  title: "DASCII | Web Design & Development Agency",
   description: "This is the landing page of dascii.com",
   // other metadata
 };
@@ -22,8 +22,8 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
+      <Video />
       <Features />
-      {/* <Video /> */}
       {/* <Brands /> */}
       <AboutSectionOne />
       {/* <AboutSectionTwo /> */}

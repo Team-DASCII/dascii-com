@@ -5,7 +5,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="dark:bg-gray-dark relative z-10 overflow-hidden bg-white pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="dark:bg-gray-dark relative z-10 overflow-hidden bg-white pb-16 pt-[120px] md:pb-[100px] md:pt-[130px] xl:pb-[110px] xl:pt-[150px] 2xl:pb-[120px] 2xl:pt-[180px]"
       >
         <div className="container">
           <div className="-mx-4 lg:mx-4 flex flex-wrap">
@@ -14,7 +14,7 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto text-left"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight">
+                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-3xl sm:leading-tight md:text-5xl md:leading-tight lg:text-7xl lg:leading-tight">
                   Pioneering <br/> Web Designing & <br/> Development Solutions
                 </h1>
                 <p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
